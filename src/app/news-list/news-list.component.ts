@@ -14,6 +14,8 @@ export class NewsListComponent implements OnInit {
   bigTotalItems: number;
   bigCurrentPage: number;
   itemsOnPage: number;
+  sortParam: string;
+  sortOrder = false;
 
   constructor(private newsService: NewsService) { }
 
@@ -21,6 +23,7 @@ export class NewsListComponent implements OnInit {
     this.newsService.getnews()
       .then(res => {
         this.newsList = res;
+        debugger
         this.bigTotalItems = res.length;
       });
     this.maxSize = 5;
@@ -39,13 +42,18 @@ export class NewsListComponent implements OnInit {
 
   increasePoints(news) {
     news.num_points += 1;
+    this.sortBy(this.sortParam, this.sortOrder, false);
   }
 
-  sortBy(param, desc) {
+  sortBy(param, desc, updateCurrentPage) {
+    this.sortParam = param;
+    this.sortOrder = desc;
     this.newsList = _.sortBy(this.newsList, param);
     if (desc) {
       this.newsList = this.newsList.reverse();
     }
-    this.bigCurrentPage = 1;
+    if (updateCurrentPage) {
+      this.bigCurrentPage = 1;
+    }
   }
 }
