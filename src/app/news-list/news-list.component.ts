@@ -28,4 +28,11 @@ export class NewsListComponent implements OnInit {
     this.itemsOnPage = 10;
   }
 
+  newsPerPageChanged(num) {
+    if (num === -1) {
+      this.itemsOnPage = this.newsList.length;
+    } else {
+      this.itemsOnPage = num;
+    }
+  }
 }

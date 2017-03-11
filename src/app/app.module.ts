@@ -9,6 +9,7 @@ import { NewsListComponent } from './news-list/news-list.component';
 
 import { NewsService } from './services/news.service';
 import { PaginationModule } from 'ng2-bootstrap/pagination';
+import { DropdownModule } from 'ng2-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PaginationModule } from 'ng2-bootstrap/pagination';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    DropdownModule.forRoot()
   ],
   providers: [
     NewsService

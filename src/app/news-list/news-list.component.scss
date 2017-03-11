@@ -2,6 +2,19 @@ $left-width: 50px;
 $right-width: 50px;
 $margin-top: 6px;
 
+.options {
+  background: white;
+  height: 50px;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  .dd-items-container {
+    .dd-items {
+      float: right;
+    }
+  }
+}
+
 .news-item-container {
   padding: 8px;
   background: white;
@@ -44,4 +57,18 @@ $margin-top: 6px;
 
 .pagination-container {
   text-align: center;
+}
+
+.btn-inverted {
+  color: #fff;
+  background-color: #666;
+  border-color: #666;
+  &:hover{
+    background-color: #333 !important;
+    border-color: #333 !important;
+  }
+  &:focus{
+    background-color: #333 !important;
+    border-color: #333 !important;
+  }
 }

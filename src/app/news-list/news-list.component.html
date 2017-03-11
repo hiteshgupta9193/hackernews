@@ -1,3 +1,20 @@
+<div class="options">
+  <div class="dd-items-container">
+    <div class="dd-items btn-group" dropdown>
+      <button id="single-button" type="button" class="btn btn-inverted" dropdownToggle>
+        News per page <span class="caret"></span>
+      </button>
+      <ul dropdownMenu role="menu" aria-labelledby="single-button">
+        <li role="menuitem"><a class="dropdown-item" (click)="newsPerPageChanged(5)">5</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="newsPerPageChanged(10)">10</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="newsPerPageChanged(20)">20</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="newsPerPageChanged(50)">50</a></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="newsPerPageChanged(-1)">All</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-sm-12">
     <div *ngIf="newsList?.length > 0">
@@ -30,5 +47,6 @@
 </div>
 
 <div class="pagination-container">
-  <pagination [totalItems]="bigTotalItems" [itemsPerPage]="itemsOnPage" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm" [boundaryLinks]="true"></pagination>
+  <pagination [totalItems]="bigTotalItems" [itemsPerPage]="itemsOnPage" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm"
+    [boundaryLinks]="true"></pagination>
 </div>
