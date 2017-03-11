@@ -23,7 +23,6 @@ export class NewsListComponent implements OnInit {
     this.newsService.getnews()
       .then(res => {
         this.newsList = res;
-        debugger
         this.bigTotalItems = res.length;
       });
     this.maxSize = 5;
@@ -45,14 +44,14 @@ export class NewsListComponent implements OnInit {
     this.sortBy(this.sortParam, this.sortOrder, false);
   }
 
-  sortBy(param, desc, updateCurrentPage) {
+  sortBy(param, desc, currentpage) {
     this.sortParam = param;
     this.sortOrder = desc;
     this.newsList = _.sortBy(this.newsList, param);
     if (desc) {
       this.newsList = this.newsList.reverse();
     }
-    if (updateCurrentPage) {
+    if (!currentpage) {
       this.bigCurrentPage = 1;
     }
   }
