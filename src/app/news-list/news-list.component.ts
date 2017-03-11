@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../services/news.service';
-
+import 'underscore/underscore.js';
+declare let _: any;
 @Component({
   selector: 'app-news-list',
   templateUrl: './news-list.component.html',
@@ -38,5 +39,13 @@ export class NewsListComponent implements OnInit {
 
   increasePoints(news) {
     news.num_points += 1;
+  }
+
+  sortBy(param, desc) {
+    this.newsList = _.sortBy(this.newsList, param);
+    if (desc) {
+      this.newsList = this.newsList.reverse();
+    }
+    this.bigCurrentPage = 1;
   }
 }

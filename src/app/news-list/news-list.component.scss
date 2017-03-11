@@ -9,9 +9,10 @@ $margin-top: 6px;
   border-radius: 10px;
   margin-bottom: 25px;
   .dd-items-container {
-    .dd-items {
-      float: right;
-    }
+    float: right;
+  }
+  .dd-sortby-container {
+    float: left;
   }
 }
 
