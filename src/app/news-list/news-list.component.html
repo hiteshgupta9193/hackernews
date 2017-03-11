@@ -26,7 +26,7 @@
               <i class="fa fa-inverse fa-stack-1x">{{i + (bigCurrentPage * itemsOnPage) - (itemsOnPage - 1)}}</i>
             </span>
           </div>
-          <div class="points-container">
+          <div class="points-container" (click)="increasePoints(news)">
             <div class="points-icon fa fa-thumbs-o-up" aria-hidden="true"></div>
             <div class="points-count">{{news.num_points}}</div>
           </div>

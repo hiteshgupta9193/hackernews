@@ -35,4 +35,8 @@ export class NewsListComponent implements OnInit {
       this.itemsOnPage = num;
     }
   }
+
+  increasePoints(news) {
+    news.num_points += 1;
+  }
 }
